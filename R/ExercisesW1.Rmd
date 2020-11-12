@@ -1,0 +1,43 @@
+---
+title: "Exercises Week 1"
+author: "Niels Krarup"
+date: "11/12/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(mets)
+library(tidyverse)
+
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r initial plots}
+data(TRACE)
+head(TRACE)
+
+
+TRACE$death <- as.numeric(TRACE$status != 0)
+
+ggplot(TRACE, aes(x = time, y = factor(death), col = vf)) + geom_jitter()
+
+TRACE %>% group_by(death) %>% summarise(mean_vf = mean(vf))
+
+```
+
+## event
+
+You can also embed plots, for example:
+
+```{r pressure, echo=TRUE}
+gg <- glm(formula = death ~ vf, data = TRACE, family=binomial()) 
+summary(gg)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
