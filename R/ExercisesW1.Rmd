@@ -27,11 +27,35 @@ TRACE$death <- as.numeric(TRACE$status != 0)
 
 ggplot(TRACE, aes(x = time, y = factor(death), col = vf)) + geom_jitter()
 
+
 TRACE %>% group_by(death) %>% summarise(mean_vf = mean(vf))
 
+library(survival)
+out <- phreg(Surv(time, status!=0) ~ strata(vf) + chf + wmi, data = TRACE) 
+names(out)
+dd <- data.frame(vf = c(1,0), 
+                 chf = median(TRACE$chf), 
+                 wmi = median(TRACE$wmi))
+
+str(out)
+class(out)
+
+methods(predict)
+getAnywhere(predict.phreg)
+
+predict(object = out, newdata = dd, se = 0)
+#objects needed in prediction
+
+
+#
 ```
 
 ## event
+```{r}
+ggplot(TRACE, aes(x = time, y = factor(death), aes(col = vf))) + geom_jitter() + facet_grid(. ~ vf)
+
+```
+
 
 You can also embed plots, for example:
 
