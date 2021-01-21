@@ -1,0 +1,30 @@
+\documentclass[10pt,a4paper]{article}       
+\usepackage[utf8]{inputenc}  
+\usepackage{amsthm,amsmath,amssymb,amsfonts} 
+\usepackage[danish]{babel} 
+\usepackage{xfrac} 
+\usepackage{graphicx}   
+\usepackage{fancyhdr}	
+\usepackage[margin=1.10in]{geometry} 
+\pagestyle{fancy}
+\newcommand{\us}[1]{\underset{=}{#1}} 
+\newcommand{\ul}[1]{\underline{#1}} 
+\lhead{Carpe Diem. Memento Mori. YOLO. You miss all of the shots you don't take.} 
+\chead{}     
+\rhead{\today} 
+\parindent 0cm 
+\linespread{1.1}
+\begin{document} 
+\begin{align*}
+  P(  V > t) & = P(log(V) > log(t)) = P( -X^T \gamma + \epsilon > log(t) )
+   & = P( \epsilon > log(t) + X^T \gamma  )  = \exp( -  N( log(t) + X^T \gamma ))
+\end{align*}
+$N(t)$ cumulative hazard of $\nu(t)$
+
+Therefore hazard is
+\begin{align*}
+- D_t log(S_v(t)) & =  D_t ( N(log(t) +  X^T \gamma) ) =  \frac{1}{t}   \nu( log(t) + X^T \gamma )            
+\end{align*}
+
+
+\end{document}

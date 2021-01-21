@@ -1,0 +1,178 @@
+\input{preamble1}
+
+
+\begin{document}
+
+\subsection*{Good Stuff}
+$|Ef(X) - Ef(Y)| \leq E|f(X)-f(Y)|$ \\
+$X_n \xrightarrow{L1} X \Rightarrow EX_n \to EX$\\
+Markov: \\
+$ P(|X| \geq \varepsilon) \leq \frac{E|X|^p}{\varepsilon ^p}$ \\
+Chebechev:\\
+$P(|X-EX|\geq a) \leq \frac{VX}{a^2}$\\
+Causchy-Shwartz:\\
+$|EXY| \leq E|XY|  \leq \sqrt{EX^2}\sqrt{EY^2}$ 
+
+Geometrisk sum: (Bemærk k=0)\\
+$$ \sum\limits_{k=0}^n r^k =\frac{1-r^{n+1}}{1-r} $$
+Varians af produkt af uafhængige stok var:
+$$Var(XY) = (EX)^2Var(Y) + (EY)^2Var(Y) + Var(X)Var(Y)$$
+Eller: 
+$$Var(XY)=EX^2Y^2-(EX)^2(EY)^2 $$
+KOVARIANS
+$Cov(XY)=EXY-EXEY$
+\subsubsection*{Integrals}
+\textbf{Gamma}, $\alpha > 0$, shape and $\beta >0$ rate.
+$$ \int_0^{\infty} \frac{\beta^{\alpha}}{\Gamma (\alpha)} x^{\alpha -1} e^{-\beta x} = 1  , \quad EX = \frac{\alpha}{\beta} $$
+\textbf{Beta}, $\alpha , \beta  > 0$ shape parameters.
+$$ \int_0^1 \frac{\Gamma (\alpha + \beta)}{\Gamma(\alpha) \cdot \Gamma(\beta)} x^{\alpha-1} (1-x)^{\beta -1} = 1 , \quad EX = \frac{\alpha}{\alpha + \beta}$$
+
+\section*{Kap 1}
+\textbf{lemma 1.2.12 - Tilstrækkelig betingelse for a.s. konvergens}\newline
+Lad $(X_n)$ være en følge, og $X$ en anden stok. var. Hvis $\sum_{n=1}^\infty P(|X_n-X|\geq \epsilon) < \infty$, for alle $\epsilon>0$ da har vi  at $X_n \xrightarrow{a.s.} X$ \newline \\ 
+\textbf{lemma 1.2.13 - næsten sikker konvergens af delfølge}\\
+Hvis $X_n \xrightarrow{p} X$ . Eksisterer der en delfølge $ \left(X_{n_k}\right)$ hvor 
+$X_{n_k} \xrightarrow{a.s} X $\newline \\
+\textbf{Lemma 1.2.5 Entydighed af grænser}\\
+Hvis $X_n$ konvergerer i $P$, a.s, eller $\mathcal{L}^p$ både mod $X$ og $Y$ Da er $\left(X=Y\right)$ næsten sikkert, dvs de er kun forskellige på nulmængder.\newline \\
+\textbf{Lemma 1.2.6 Bevarelse af grænser i a.s. og P ved kont. transformationer}\\
+Lad $(X_n)$ være en følge af stok. var. Hvis $X_n \xrightarrow{a.s.} X$ vil $f(X_n) \xrightarrow{a.s.} f(X)$. \textit{Ligeså for konvergens i Sandsynlighed}. Hvor $f:\mathbb{R} \to \mathbb{R}$ er en kont. funktion.
+NB. pr NOTE 8 gælder lemmaet også for funktioner, $f:\mathbb{R}^k \mapsto \mathbb{R},\quad k\geq 1$ 
+Desuden skal $f$ blot være kont. på en a.s. mængde.
+\newline \\ 
+\textbf{Lemma 1.2.10}\\
+Lad $\left(X_n\right)$ og $\left(Y_n\right)$ være følger af stok.var. Og lad $X$ og $Y$ være 2 andre stok.var.\\
+Hvis $X_n \xrightarrow{P} X$ , $Y_n \xrightarrow{P} Y$ har vi at $X_n + Y_n \xrightarrow{p} X+Y$ samt $X_nY_n \xrightarrow{p} XY$\\ 
+Ligeså for $a.s.$ konvergens.\newline \\  
+\textbf{Lemma 1.2.11 Borel-Cantelli}\\
+Lad $\left(F_n\right)$ være en følge af events, da gælder at hvis $\sum_{n\geq1}P(F_n) < \infty\quad \Longrightarrow P(F_n i.o.)=0$\newline \\
+\textbf{lemma 1.3.12 (Second Borel-Cantelli)}\\
+Lad $\left(F_n\right)$ være en følge af \underline{uafhængige}  events. Da er $P(F_n i.o.) = \begin{cases} 0 & \Longleftrightarrow \sum_{n\geq 1}P(F_n) < \infty \\ 
+1 \end{cases}$
+\subsection*{Cauchy Egenskaber}
+\textbf{Lemma 1.2.14}\\
+Lad $\left(X_n\right)$ være en følge af stok. var. Der gælder da følgende mængderelation:\\ 
+$\left((X_n)\, \text{er cauchy}\right) = \bigcap_{m=1}^{\infty} \bigcup_{n=1}^\infty \bigcap_{k\geq n} \left(|X_k-X_n| \leq \frac{1}{m}\right)$\\
+Heraf følger at ovenstående mængde er målelig.
+\section*{Kap 2}
+\textbf{Lemma 2.1.5 Invarians af X $\Longleftrightarrow$ X er $\mathcal{I}_T$ målelig}\newline
+Der gælder $$X\circ T = X \Longleftrightarrow T^{-1}(X\in A) = (X\in A)$$
+Altså at $X$ er $\mathcal{I}_T$ målelig.\\
+Husk $\mathcal{I}_T=\left\{ F\in \mathcal{F}\,|\, T^{-1}(F)=F \right\rbrace$
+
+\section*{Kap 3 svag konvergens og konvergens i fordeling}
+\textbf{Lemma 3.1.2 Konvergens i fordeling og svag konvergens af mål er ækvivalent}\newline
+Lad $X_n$ have fordeling $\mu_n$ og lad $X$ være en anden stok. var. med fordeling $\mu$\\
+Da gælder at $X_n \xrightarrow{D} X \Longleftrightarrow \mu_n \xrightarrow{wk} \mu$  \newline
+
+\textbf{Lemma 3.1.5}
+Grænser for svag konvergens er entydige. $\mu_n \xrightarrow{wk} \mu \quad og \quad \mu_n \xrightarrow{wk} \nu \Longrightarrow \mu=\nu$ \\
+
+\textbf{Lemma 3.1.6, konvergens i fordeling sikrer Tightness}\\
+Lad $(\mu_n)$ være en følge af ssh-mål på $(\mathbb{R},\mathcal{B})$, og $\mu$ et andet mål.
+Antag at $\lim_{n\to \infty} \int f d\mu_n = \int f d\mu $ For alle $f \in C_b^u(\mathbb{R}$ Altså svag konvergens ved \textbf{uniformt} kontinuerte, boundede funktioner. Da gælder:\\
+$\lim\limits_{M\rightarrow\infty} \sup_{n\geq 1} \mu_n ([-M,M]^c)=0$\newline
+
+\textbf{THM 3.1.7}
+Svag konvergens kan reduceret til undersøgelse af konvergens af integraler af \textbf{uniformt} kontinuert boundede funktioner. Dvs: $\mu_n  \xrightarrow{wk} \mu \Longleftrightarrow \lim_{n\to \infty} \int f d\mu_n = \int f d\mu $ for alle $f \in C_b^u (\mathbb{R)}$\\
+
+\textbf{THM 3.1.8 continous mapping}
+lad $\mu_n \xrightarrow{wk} \mu$ da har vi for alle kontinuerte funktioner $h:\mathbb{R}\to \mathbb{R}$ at $h(\mu_n) \xrightarrow{wk} h(\mu)$\newline
+
+\textbf{Lemma 3.1.9, Scheffé, punktvis konvergens af tætheder, medfører konvergens i fordeling}\\
+Lad $\mu_n$ være en følge af sandsynlighedsmål med tæthed $g_n(x)$ mht et mål $\nu$ altså $\mu_n = g_n(x) \cdot \nu$
+Lad $\mu$ være et andet mål med $\mu=g(x)\cdot \mu$ da gælder at hvis $g_n(x) \rightarrow g(x)$ for $\nu$-næsten alle x, så gælder $\mu_n \xrightarrow{D} \mu$ \newline
+
+\textbf{Lemma 3.2.1}
+Lad $(\mu_n)$ være en følge af ssh-mål på $(\mathbb{R},\mathcal{B})$\\
+Lad $F_n(x)$ hhs $F(x)$ være CDF for $\mu_n$ hhs $\mu$ , dvs $F(x)=\mu(-\infty,x]$ \\
+Hvis $\mu_n \xrightarrow{wk} \mu$ og $F(x)$ er kontinuert i $x$ da gælder også at $F_n(x) \to F(x)$ 
+
+\textbf{Lemma 3.3.1 Deterministisk grænse for konvergens i fordeling og sandsynlighed}\\
+Lad $(X_n)$ være en følge af stok.var. og lad $x\in \mathbb{R}$\\
+Da gælder $X_n \xrightarrow{P} x \Longleftrightarrow X_n \xrightarrow{D} x$ \\Altså er konvergens i sandsynlighed og fordeling ækvivalent, når grænsen er deterministisk.\newline \\
+
+\textbf{THM 3.2.3, Ækvivalens af konvergens i fordeling, og konvergens af fordelingfunktion}\\
+Lad $\mu_n$ være en følge af sandsynlighedsmål, $\mu$ et andet mål. Antag at $\mu_n$ har fordelingsfunktion $F_n(x)$ mens $\mu$ har fordelignsfunktion $F(x)$ Da gælder at for $\mu_n \xrightarrow{D}$ Hvis og kun hvis der eksister en tæt delmængde af $\mathbb{R}$, $A$ hvorom der gælder at $\lim_{n\to \infty}F_n(x) = F(x)$ for alle $x \in A$\newline
+
+\textbf{Lemma 3.3.2 Slutsky - Sum af grænser i Fordeling og Sandsynlighed}\\
+Lad $X_n \xrightarrow{D} X$ og $Y_n \xrightarrow{P} 0$ altså en deteministisk grænse, da gælder der at $X_n + Y_n \xrightarrow{D} X$ \\
+\textbf{THM 3.3.3 Generalisering af Slutsky, Grænser i fordeling}\\
+Lad være givet som i Slutsky, Da gælder for alle deterministiske grænser i sandsynlighed $Y_n \xrightarrow{P} y$ hvor $y \in \mathbb{R}$, og for en kont. afbildning $h:\mathbb{R}^2 \mapsto \mathbb{R}$ at $h(X_n, Y_n) \xrightarrow{D} h(X,y)$\newline \\
+
+\textbf{Lemma 3.4.9  mm.}\\
+For en stokastisk variabel $X$ med cf: $\varphi(\theta)$ da har $\alpha + \beta X$ cf: $\phi (\theta )=e^{i\theta \alpha}  \varphi (\beta \theta )$\newline
+NB husk at standard normalfordelingen, $N(0,1)$ har cf: $\varphi(\theta)= e^{\frac{-\theta^2}{2}}$
+for\newline $X\sim N(0,1)$ da er $X^\prime = \xi + \sigma X$ fordelt ved $N(\xi , \sigma ^2)$\\ og specielt har $X^\prime$ cf:
+$\theta \to e^{i\theta \xi} e^{\frac{-\sigma ^2 \theta ^2}{2}}=e^{i\theta \xi -\frac{\sigma ^2 \theta ^2}{2}}$ \\
+Standard exponentialfordelingen har cf:  $\theta \mapsto \frac{1}{1-i\theta}$ og igen følger af lemmaet at eksponentialfordelingen med middelværdi $\lambda$ har cf: $\theta \mapsto \frac{1}{1-i\lambda \theta}$\\
+Se slides og opgaver for flere.\newline
+\\
+\textbf{THM 3.5.3, Klassisk CLT}\\
+Lad $(X_n)$ være en iid følge af stokastiske variable. Med $EX_n=\xi$ og $VX_n=\sigma ^2$ da gælder
+$$\frac{1}{\sqrt{n}}\sum\limits_{k=1}^n\frac{X_k-\xi}{\sigma} \xrightarrow{D} N(0,1) $$
+Bemærk at vi ved Cont. Map. THM har følgende: 
+$$\frac{1}{n} \sum\limits_{k=1}^n X_k \xrightarrow{D} N\left(\xi, \frac{1}{n}\sigma ^2\right)$$
+Hvor vi allerede vidste hvad middelværdien skulle være, jvf Store Tals Lov. Bemærk desuden at dette giver os at $\frac{1}{n}\sum\limits_{k=1}^nX_k \stackrel{a.s.}{\sim} N(\xi,\frac{1}{n}\sigma^2)$\newline \\
+\textbf{Lemma 3.6.2 Assymptotisk normalitet medfører konvergens i $P$ mod middelværdien}\\
+Lad $X_n \stackrel{a.s.}{\sim} N(\xi,\frac{1}{n}\sigma ^2)$ Da gælder at $X_n \xrightarrow{P} \xi$ \\
+Dette giver intuitivt god mening, idet $X_n$ koncentrer sig omkring sin middelværdi. 
+\newpage
+\section*{Kompleks analyse}
+God tricks:
+for $z \in \mathbb{C}$ gælder $|Re(z)|\leq |z|$  ligeså for den imaginære del.\newline
+HUSK: $e^{i\theta x} = cos(\theta x) + isin(\theta x)$\\
+I forbindelse med bestemmelse at karakteristiske funktioner, kan det ofte være nyttigt at kende stamfunktionen til $c \cos(\theta x)e^{-x} + d\sin(\theta x ) e^{-x}$ Da har vi:
+$$\frac{d}{dx} \left( \frac{-c-d\theta}{1+\theta^2} \cos(\theta x) e^{-x} + \frac{c\theta -d}{1+\theta^2}\sin(\theta x)e^{-x}\right) = c\cos(\theta x) e^{-x} + d \sin(\theta x) e^{-x} $$
+
+\newpage
+\section{Diverse}
+$\sum\limits_{i=2}^n\frac{1}{i} \leq \log(n) \leq \sum\limits_{i=1}^{n-1}\frac{1}{i}$\newline
+Floor , eller integerpart af x:
+$\lfloor x \rfloor $ er entydigt givet som den funktion, der opfylder $\lfloor x \rfloor\leq x < \lfloor x \rfloor +1 $
+\subsection*{Exp}
+$$ e^x \geq x+1 $$
+og
+$$\left(1+\frac{x}{n}\right)^n \rightarrow e^x $$
+Lav suitable extension, så diskont. bliver målelige.
+
+
+
+\section*{Survival Analysis}
+\textbf{lemma 1.2.12 - Tilstrækkelig betingelse for a.s. konvergens}\newline
+Lad $(X_n)$ være en følge, og $X$ en anden stok. var. Hvis $\sum_{n=1}^\infty P(|X_n-X|\geq \epsilon) < \infty$, for alle $\epsilon>0$ da har vi  at $X_n \xrightarrow{a.s.} X$ \newline \\ 
+\textbf{lemma 1.2.13 - næsten sikker konvergens af delfølge}\\
+Hvis $X_n \xrightarrow{p} X$ . Eksisterer der en delfølge $ \left(X_{n_k}\right)$ hvor 
+$X_{n_k} \xrightarrow{a.s} X $\newline \\
+\textbf{Lemma 1.2.5 Entydighed af grænser}\\
+Hvis $X_n$ konvergerer i $P$, a.s, eller $\mathcal{L}^p$ både mod $X$ og $Y$ Da er $\left(X=Y\right)$ næsten sikkert, dvs de er kun forskellige på nulmængder.\newline \\
+\textbf{Lemma 1.2.6 Bevarelse af grænser i a.s. og P ved kont. transformationer}\\
+Lad $(X_n)$ være en følge af stok. var. Hvis $X_n \xrightarrow{a.s.} X$ vil $f(X_n) \xrightarrow{a.s.} f(X)$. \textit{Ligeså for konvergens i Sandsynlighed}. Hvor $f:\mathbb{R} \to \mathbb{R}$ er en kont. funktion.
+NB. pr NOTE 8 gælder lemmaet også for funktioner, $f:\mathbb{R}^k \mapsto \mathbb{R},\quad k\geq 1$ 
+Desuden skal $f$ blot være kont. på en a.s. mængde.
+\newline \\ 
+\textbf{Lemma 1.2.10}\\
+Lad $\left(X_n\right)$ og $\left(Y_n\right)$ være følger af stok.var. Og lad $X$ og $Y$ være 2 andre stok.var.\\
+Hvis $X_n \xrightarrow{P} X$ , $Y_n \xrightarrow{P} Y$ har vi at $X_n + Y_n \xrightarrow{p} X+Y$ samt $X_nY_n \xrightarrow{p} XY$\\ 
+Ligeså for $a.s.$ konvergens.\newline \\  
+\textbf{Lemma 1.2.11 Borel-Cantelli}\\
+Lad $\left(F_n\right)$ være en følge af events, da gælder at hvis $\sum_{n\geq1}P(F_n) < \infty\quad \Longrightarrow P(F_n i.o.)=0$\newline \\
+\textbf{lemma 1.3.12 (Second Borel-Cantelli)}\\
+Lad $\left(F_n\right)$ være en følge af \underline{uafhængige}  events. Da er $P(F_n i.o.) = \begin{cases} 0 & \Longleftrightarrow \sum_{n\geq 1}P(F_n) < \infty \\ 
+1 \end{cases}$
+\newpage
+\section*{Estimators}
+\subsection*{Proportional Hazard Model}
+Let the counting process $N_i(t)$ have intensity given by 
+$$\lambda_i(t | X) = Y_i(t) \lambda_0(t)\exp(X_i\beta)$$
+for a $p$-vector of covariates for subject $i$, $X_i$, and $\beta$ a $p$-vector of regression coefficients, i.e. the cox model.\\ 
+The baseline cumulative hazard function is estimated by the \textbf{Breslow} estimator:
+
+$$
+\hat{\Lambda}_0(t) = \int_0^t \frac{1}{\sum_{i=1}^nY_i(t)\exp(X_i\hat{\beta})} dN.(s)
+$$\\
+
+\subsubsection*{Properties:}
+
+
+\end{document}

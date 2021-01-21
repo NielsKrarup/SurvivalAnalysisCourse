@@ -11,3 +11,8 @@ getAnywhere(print.Date)
 
 300/as.numeric((date - Sys.Date()))
 str(date)
+
+library(medflex)
+library(dplyr)
+
+iris %>% select(contains("."))
